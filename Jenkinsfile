@@ -1,9 +1,21 @@
-pipeline {
+Pipeline {
+    agent any {
         stages {
-            stage('build') {
+            stage('one'){
                 steps {
-                    sh 'mvn --version'
+                    echo "Build succeeds"
+                }
+            }
+            stage('Two') {
+                steps {
+                    echo "Test completed"
+                }
+            }
+            stage('Three') {
+                steps {
+                    echo "Deployed successfully"
                 }
             }
         }
     }
+}
