@@ -1,21 +1,26 @@
 pipeline {
-    agent any {
-        stages {
-            stage('one'){
-                steps {
-                    echo "Build succeeds"
-                }
-            }
-            stage('Two') {
-                steps {
-                    echo "Test completed"
-                }
-            }
-            stage('Three') {
-                steps {
-                    echo "Deployed successfully"
-                }
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building.. This is the build phase'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Testing.. This is the testing phase'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....  This is the deployment phase'
+            }
+        }
+	stage('Postdeploy') {
+		steps {
+			echo 'Postdeployment phase....'
+		}
+	}
     }
 }
