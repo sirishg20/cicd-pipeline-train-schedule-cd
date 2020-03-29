@@ -17,6 +17,5 @@ pipeline {
                 echo "Info: $mvn version"
             }
         }
-        }
     }
 }
