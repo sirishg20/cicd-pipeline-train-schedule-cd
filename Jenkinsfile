@@ -7,12 +7,12 @@ pipeline {
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
-        stage ('Test') {
+        stage('Test') {
                 steps {
                     echo "Test completed"
                 }
             }
-        stage ('Deploy') {
+        stage('Deploy') {
                 steps {
                     echo "Deployed successfully"
                 }
