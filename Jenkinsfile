@@ -1,26 +1,22 @@
 pipeline {
-    agent any
-
+    agent any 
+	
     stages {
-        stage('Build') {
+        stage('one') {
             steps {
-                echo 'Building.. This is the build phase'
+                echo "Build was completed")
             }
         }
-        stage('Test') {
+        stage('Two') {
             steps {
-                echo 'Testing.. This is the testing phase'
+                echo "Second test was completed"
             }
         }
-        stage('Deploy') {
+        stage('Three') {
             steps {
-                echo 'Deploying....  This is the deployment phase'
+                echo "Info: $mvn version"
             }
         }
-	stage('Postdeploy') {
-		steps {
-			echo 'Postdeployment phase....'
-		}
-	}
+        }
     }
 }
