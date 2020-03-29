@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Three') {
             steps {
-                echo "Info: $mvn version"
+                echo "Info: mvn version"
             }
         }
     }
