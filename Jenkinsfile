@@ -14,7 +14,6 @@ pipeline {
         }
         stage('Three') {
             steps {
-		sh mvn -version
                 echo "Info: mvn version"
             }
         }
