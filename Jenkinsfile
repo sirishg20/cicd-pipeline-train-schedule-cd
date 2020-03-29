@@ -1,21 +1,9 @@
 pipeline {
-    agent any
+    agent { docker { image 'maven:3.3.3' } }
     stages {
-        stage ('Build') {
+        stage('build') {
             steps {
-                echo 'Running build automation'
-                sh './gradlew build --no-daemon'
-                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-            }
-        stage ('Test') {
-                steps {
-                    echo "Test completed"
-                }
-            }
-        stage ('Deploy') {
-                steps {
-                    echo "Deployed successfully"
-                }
+                sh 'mvn --version'
             }
         }
     }
